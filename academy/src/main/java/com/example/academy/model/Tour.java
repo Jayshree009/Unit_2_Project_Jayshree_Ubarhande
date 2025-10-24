@@ -20,5 +20,77 @@ public class Tour {
 
     private LocalDateTime createdAt = LocalDateTime.now();
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getParentName() {
+        return parentName;
+    }
+
+    public void setParentName(String parentName) {
+        this.parentName = parentName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getChildName() {
+        return childName;
+    }
+
+    public void setChildName(String childName) {
+        this.childName = childName;
+    }
+
+    public String getPreferredDate() {
+        return preferredDate;
+    }
+
+    public void setPreferredDate(String preferredDate) {
+        this.preferredDate = preferredDate;
+    }
+
+    public String getPreferredTime() {
+        return preferredTime;
+    }
+
+    public void setPreferredTime(String preferredTime) {
+        this.preferredTime = preferredTime;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
     // getters/setters
 }
