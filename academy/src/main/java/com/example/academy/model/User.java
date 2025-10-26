@@ -13,8 +13,18 @@ public class User {
     @Column(nullable = false, unique = true) private String email;
     @Column(nullable = false) private String role; // ADMIN / PARENT
 
-    @Column(nullable = false) private LocalDateTime createdAt = LocalDateTime.now();
+   // @Column(nullable = false) private LocalDateTime createdAt = LocalDateTime.now();
 
+    public User() {}
+
+    public User(String name, String email, String role) {
+        this.fullName = name;
+        this.email = email;
+        this.role = role;
+    }
+
+
+    // getters/setters
     public Long getId() {
         return id;
     }
@@ -47,13 +57,13 @@ public class User {
         this.role = role;
     }
 
-    public LocalDateTime getCreatedAt() {
+    /*public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
-    }
+    }*/
 
-    // getters/setters
+
 }
