@@ -1,6 +1,8 @@
 package com.example.academy.model;
 
 import jakarta.persistence.*;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -13,7 +15,7 @@ public class Tour {
     private String phone;
 
     private String childName;
-    private String preferredDate;     // keep as String for MVP (or LocalDate)
+    private LocalDate preferredDate;     // keep as String for MVP (or LocalDate)
     private String preferredTime;     // keep as String for MVP
 
     @Column(nullable = false) private String status = "PENDING"; // PENDING/CONFIRMED/CANCELLED
@@ -60,11 +62,11 @@ public class Tour {
         this.childName = childName;
     }
 
-    public String getPreferredDate() {
+    public LocalDate getPreferredDate() {
         return preferredDate;
     }
 
-    public void setPreferredDate(String preferredDate) {
+    public void setPreferredDate(LocalDate preferredDate) {
         this.preferredDate = preferredDate;
     }
 
