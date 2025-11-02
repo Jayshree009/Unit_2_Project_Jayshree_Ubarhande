@@ -1,6 +1,8 @@
 package com.example.academy.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
+
 import java.time.LocalDateTime;
 
 @Entity
@@ -13,7 +15,55 @@ public class User {
     @Column(nullable = false, unique = true) private String email;
     @Column(nullable = false) private String role; // ADMIN / PARENT
 
-    @Column(nullable = false) private LocalDateTime createdAt = LocalDateTime.now();
+   @Column(nullable = false) private LocalDateTime createdAt = LocalDateTime.now();
+
+
+
 
     // getters/setters
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public void setPasswordHash(@Size(max = 120) String passwordHash) {
+
+    }
 }
