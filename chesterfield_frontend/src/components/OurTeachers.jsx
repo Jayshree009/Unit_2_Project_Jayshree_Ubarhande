@@ -1,4 +1,4 @@
-import teacher1 from '../assets/Smith.jpg'; //Importing teachers pictures 
+import teacher1 from '../assets/Smith.jpg'; //Importing teachers pictures
 import teacher2 from '../assets/Johnson.jpg';
 import teacher3 from '../assets/Lopez.jpg';
 

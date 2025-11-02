@@ -16,6 +16,8 @@ function Header() {
           <li className="nav-item"><Link className="nav-link" to="/reviews">Reviews</Link></li>
           <li className="nav-item"><Link className="nav-link" to="/health">Health & Safety</Link></li>
           <li className="nav-item"><Link className="btn btn-primary ms-2" to="/book">Book a Tour</Link></li>
+
+
         </ul>
       </nav>
     </header>
