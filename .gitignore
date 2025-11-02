@@ -1,4 +1,4 @@
-HELP.md
+academy/HELP.md
 target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
@@ -31,3 +31,11 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# IntelliJ project files
+.idea/
+
+
+# Frontend build & node modules
+/chesterfield_frontend/node_modules/
+/chesterfield_frontend/dist/

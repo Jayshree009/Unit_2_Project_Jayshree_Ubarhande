@@ -11,6 +11,9 @@ import HealthSafety from "./components/HealthSafety";
 import BookTour from "./components/BookTour";
 import Footer from "./components/Footer";
 import Announcements from "./components/Announcements";
+//import WeatherWidget from "./components/WeatherWidget";
+import WeatherWidget from "./components/WeatherWidget";
+
 
 //Defining layout with Header and Footer - Always visible
 // Use of <Routes> and <Route> for page navigation
@@ -18,6 +21,9 @@ function App() {
   return (
     <>
       <Header />
+         <section style={{ margin: "1.5rem 0" }}>
+              <WeatherWidget city="Chesterfield, MO" />
+            </section>
       <Routes>
         <Route path="/" element={<><Hero /><WelcomeMessage /><MeetTheHead /><Programs /><Announcements /></>} />
         <Route path="/about" element={<AboutUs />} />
@@ -26,6 +32,7 @@ function App() {
         <Route path="/health" element={<HealthSafety />} />
         <Route path="/book" element={<BookTour />} />
       </Routes>
+
       <Footer />
     </>
   );
