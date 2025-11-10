@@ -1,117 +1,42 @@
-import React, { useState } from 'react';
-import Button from './Button';
+import { useState } from "react";
+import api from "../api";
 
-function BookTour() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    date: '',
-    message: ''
+export default function BookTour() {
+  const [form, setForm] = useState({
+    parentName: "",
+    parentEmail: "",
+    childName: "",
+    preferredDate: "",
+    notes: ""
   });
+  const [msg, setMsg] = useState("");
 
-  const [submitted, setSubmitted] = useState(false);
-  const [errors, setErrors] = useState({});
+  const onChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
 
-  const validate = () => {
-    const newErrors = {};
-    if (!formData.name) newErrors.name = 'Name is required.';
-    if (!formData.email.includes('@')) newErrors.email = 'Valid email is required.';
-    if (!formData.phone) newErrors.phone = 'Phone number is required.';
-    if (!formData.date) newErrors.date = 'Please select a date.';
-    return newErrors;
-  };
-
-  const handleSubmit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    const validationErrors = validate();
-    if (Object.keys(validationErrors).length === 0) {
-      setSubmitted(true);
-      setFormData({ name: '', email: '', phone: '', date: '', message: '' });
-      setErrors({});
-    } else {
-      setErrors(validationErrors);
+    setMsg("");
+    try {
+      await api.createTour(form);
+      setMsg("Tour booked! A confirmation email has been sent.");
+      setForm({ parentName:"", parentEmail:"", childName:"", preferredDate:"", notes:"" });
+    } catch (err) {
+      setMsg(`Booking failed: ${err.message}`);
     }
   };
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
   return (
-    <div className="container my-5">
-      <h2 className="text-center mb-4">Book a Tour</h2>
-
-      {submitted && (
-        <div className="alert alert-success" role="alert">
-          Thank you! Your request has been submitted.
-        </div>
-      )}
-      {/*Form with various input types and onSubmit Event handler */}
-      <form onSubmit={handleSubmit} noValidate>
-        <div className="mb-3">
-          <label className="form-label">Parent's Name</label>
-          <input
-            type="text"
-            className={`form-control ${errors.name ? 'is-invalid' : ''}`}
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-          />
-          {errors.name && <div className="invalid-feedback">{errors.name}</div>}
-        </div>
-
-        <div className="mb-3">
-          <label className="form-label">Email Address</label>
-          <input
-            type="email"
-            className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-          {errors.email && <div className="invalid-feedback">{errors.email}</div>}
-        </div>
-
-        <div className="mb-3">
-          <label className="form-label">Phone Number</label>
-          <input
-            type="tel"
-            className={`form-control ${errors.phone ? 'is-invalid' : ''}`}
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-          />
-          {errors.phone && <div className="invalid-feedback">{errors.phone}</div>}
-        </div>
-
-        <div className="mb-3">
-          <label className="form-label">Preferred Tour Date</label>
-          <input
-            type="date"
-            className={`form-control ${errors.date ? 'is-invalid' : ''}`}
-            name="date"
-            value={formData.date}
-            onChange={handleChange}
-          />
-          {errors.date && <div className="invalid-feedback">{errors.date}</div>}
-        </div>
-
-        <div className="mb-3">
-          <label className="form-label">Additional Comments (optional)</label>
-          <textarea
-            className="form-control"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            rows="3"
-          />
-        </div>
-
-        <Button label="Submit" onClick={handleSubmit} className="btn-primary" />
+    <div style={{maxWidth:520, margin:"24px auto"}}>
+      <h2>Book a Tour</h2>
+      <form onSubmit={submit} style={{display:"grid", gap:12}}>
+        <input name="parentName" placeholder="Parent name" value={form.parentName} onChange={onChange} required />
+        <input type="email" name="parentEmail" placeholder="Parent email" value={form.parentEmail} onChange={onChange} required />
+        <input name="childName" placeholder="Child name" value={form.childName} onChange={onChange} required />
+        <input type="date" name="preferredDate" value={form.preferredDate} onChange={onChange} required />
+        <textarea name="notes" placeholder="Notes (optional)" value={form.notes} onChange={onChange} />
+        <button type="submit" style={{padding:"8px 12px"}}>Submit</button>
       </form>
+      {msg && <p style={{marginTop:12}}>{msg}</p>}
     </div>
   );
 }
-
-export default BookTour;

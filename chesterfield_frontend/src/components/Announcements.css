@@ -1,0 +1,14 @@
+/* chesterfield_frontend/src/components/Announcements.css */
+.ann-list { display: grid; gap: 12px; }
+.ann-item {
+  border-left: 4px solid #2563eb;
+  background: #f8fafc;
+  padding: 12px 14px;
+  border-radius: 10px;
+}
+.ann-title { font-weight: 600; margin-bottom: 4px; }
+.ann-actions { margin-top: 8px; }
+.ann-actions button {
+  background:#ef4444; color:#fff; border:0; border-radius:8px; padding:6px 10px; cursor:pointer;
+}
+.ann-actions button:hover { filter: brightness(0.95); }

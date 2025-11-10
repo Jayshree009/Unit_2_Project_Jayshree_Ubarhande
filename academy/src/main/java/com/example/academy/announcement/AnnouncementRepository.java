@@ -1,6 +1,5 @@
-package com.example.academy.repo;
+package com.example.academy.announcement;
 
-import com.example.academy.model.Announcement;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AnnouncementRepository extends JpaRepository<Announcement, Long> {}
