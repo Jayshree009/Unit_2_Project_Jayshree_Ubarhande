@@ -157,7 +157,7 @@ footer {
   50% {
     transform: scale(1.2);
   }
-  
+
 }
 
 .logo:hover {
@@ -188,3 +188,23 @@ input[type="date"] {
   -webkit-appearance: menulist;
   appearance: auto;
 }
+.card {
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 16px;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+}
+.grid {
+  display: grid;
+  gap: 16px;
+}
+.grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr; } }
+
+

@@ -1,4 +1,4 @@
-package com.example.academy.model;
+package com.example.academy.announcement;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
@@ -19,15 +19,6 @@ public class Announcement {
     private String authorName;
 
     // getters/setters
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;

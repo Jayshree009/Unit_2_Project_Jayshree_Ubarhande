@@ -10,7 +10,7 @@ const photos = [school1, school2, school3];
 
 
 function Hero() {
-    
+
   const [current, setCurrent] = useState(0);
 
   const nextPhoto = () => {
@@ -19,14 +19,17 @@ function Hero() {
 
   const prevPhoto = () => {
     setCurrent((current - 1 + photos.length) % photos.length)};
-    
+
     const navigate = useNavigate();
     const handleClick = () => {
     navigate('/book'); // redirects to Book a Tour page
   };
 //Welcome banner, photo gallery with arrows,  book a tour button.
   return (
-    <section className="hero text-center py-5 bg-light">
+
+    <section className="hero text-center py-5 bg-light"    >
+
+
       <h1 className="hero-heading ">Chesterfield Academy</h1>
       <h4 className="hero-address mb-4">15234 Chesterfield Business Pkwy, Chesterfield, MO 63100</h4>
       {/*This section displays images with left and right arrow buttons */}
