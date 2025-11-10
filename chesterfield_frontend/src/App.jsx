@@ -15,17 +15,24 @@ import Announcements from "./components/Announcements";
 import WeatherWidget from "./components/WeatherWidget";
 
 
+
+
+
+
+
+
 //Defining layout with Header and Footer - Always visible
 // Use of <Routes> and <Route> for page navigation
 function App() {
   return (
     <>
+
       <Header />
-         <section style={{ margin: "1.5rem 0" }}>
-              <WeatherWidget city="Chesterfield, MO" />
-            </section>
-      <Routes>
-        <Route path="/" element={<><Hero /><WelcomeMessage /><MeetTheHead /><Programs /><Announcements /></>} />
+
+           <Routes>
+        <Route path="/" element={<><section style={{ margin: "1.5rem 0" }}>
+                                                     <WeatherWidget city="Chesterfield, MO" />
+                                                   </section><Hero /><WelcomeMessage /><MeetTheHead /><Programs /><Announcements /></>} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/teachers" element={<OurTeachers />} />
         <Route path="/reviews" element={<Reviews />} />
@@ -37,5 +44,6 @@ function App() {
     </>
   );
 }
+
 
 export default App;
