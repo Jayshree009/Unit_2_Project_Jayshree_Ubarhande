@@ -32,6 +32,9 @@ function App() {
            <Routes>
         <Route path="/" element={<><section style={{ margin: "1.5rem 0" }}>
                                                      <WeatherWidget city="Chesterfield, MO" />
+                                                     <p style={{ fontSize: '18px', marginTop: '8px', color: '#007BFF' }}>
+                                                       Please dress up your child as per today's weather.
+                                                     </p>
                                                    </section><Hero /><WelcomeMessage /><MeetTheHead /><Programs /><Announcements /></>} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/teachers" element={<OurTeachers />} />
