@@ -65,6 +65,8 @@ This project demonstrates full front-to-back integration using React, Spring Boo
 ## 📘 Database Schema (ER Diagram Description)
 <img width="975" height="685" alt="image" src="https://github.com/user-attachments/assets/74627a41-3407-4c34-b4cb-f9f0323cdad3" />
 
+## 📝Wireframing
+<img width="714" height="744" alt="image" src="https://github.com/user-attachments/assets/d5ae401c-a6c1-466f-915f-a4023f740b16" />
 
 
 ---
