@@ -75,10 +75,12 @@ This project demonstrates full front-to-back integration using React, Spring Boo
 
 ### Programs
 
-| Method | Endpoint          | Description              |
-|--------|-------------------|--------------------------|
-| GET    | `/api/programs`   | Retrieve all programs    |
-| POST   | `/api/programs`   | Create a new program     |
+| Method | Endpoint            | Description              |
+|--------|-------------------  |--------------------------|
+| GET    | `/api/programs`     | Retrieve all programs    |
+| POST   | `/api/programs`     | Create a new program     |
+| DELETE | `/api/programs/{id}`| Delete a  program        |
+| PUT    | `/api/programs/{id}`| Update a program         |
 
 ---
 
