@@ -16,7 +16,7 @@ public class Program {
 
     private String ageGroup;
 
-    private Double monthlyFee;
+   // private Double monthlyFee;
 
     // getters/setters
     public Long getId() { return id; }
@@ -31,6 +31,6 @@ public class Program {
     public String getAgeGroup() { return ageGroup; }
     public void setAgeGroup(String ageGroup) { this.ageGroup = ageGroup; }
 
-    public Double getMonthlyFee() { return monthlyFee; }
-    public void setMonthlyFee(Double monthlyFee) { this.monthlyFee = monthlyFee; }
+    //public Double getMonthlyFee() { return monthlyFee; }
+    //public void setMonthlyFee(Double monthlyFee) { this.monthlyFee = monthlyFee; }
 }

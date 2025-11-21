@@ -1,171 +1,14 @@
-/*HTML anchor <a> elements, which are used to create hyperlinks in  webpages.*/
+/* Links */
 a {
   font-weight: 500;
   color: #646cff;
-  text-decoration:inherit;
+  text-decoration: inherit;
 }
 a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  display: flex; /* Turns the <body> into a flex container - specially the homepage photgallery- when switched to mobile device*/
-  place-items: center;/*Ensures that entire app stays centered vertically and horizontally, speciall on mobile devices */
-  min-width: 320px; /*Ensures that the body is at least 320px wide, which prevents layout breaking on very small screens.*/
-  min-height: 100vh; /*Ensures -the body always takes up at least the full height of the viewport, even if the content is smaller — helpful for vertical centering or full-screen backgrounds.*/
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-
-
-.hero {
-  text-align: center;
-  background-color: #e8f4ff;
-  padding: 50px 20px;
-}
-
-.hero-heading {
-  color: crimson;
-  font-size: 2rem;
-}
-
-.hero-address {
-  font-size: 1rem;
-  margin-bottom: 10px;
-}
-
-/*setting the wesite width and alignment*/
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-/*Logo size*/
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-/*Our Programs card*/
-.card {
-  padding: 2em;
-}
-
-/* Navigation styling - horizontally aligned, neatly spaced, centerd, no bullets, or underlines */
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 0;
-  margin-bottom: 2rem;
-}
-
-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bolder;
-}
-
-.hero {
-  background-color: #e8f4ff;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.programs {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  padding: 40px 0;
-}
-
-.program-card {
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  padding: 20px;
-  width: 250px;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.program-card img {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 10px;
-}
-
-footer {
-  background-color: #f1f1f1;
-  padding: 20px;
-  text-align: center;
-}
-
-.hero-heading {
-  color: crimson;
-}
-
-.hero-address {
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.welcome {
-  background-color: #fff;
-  padding: 50px 20px;
-}
-
-.welcome h2 {
-  color: #007BFF;
-  font-weight: bold;
-}
-
-.welcome p {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-}
-/* To support the media query to respond user's preferred color scheme setting in the device */
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
-/* Zoom animation on hover */
-@keyframes logo-zoom {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-
-}
-
-.logo:hover {
-  animation: logo-zoom 1s ease-in-out;
-}
-
-
-/*This is the highest-level selector in CSS. Styles defined here apply globally unless overridden.*/
+/* Root and global typography */
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -183,21 +26,67 @@ footer {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-input[type="date"] {
-  -webkit-appearance: menulist;
-  appearance: auto;
+/* Page base */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  /* Let content flow naturally; centering is handled by #root / sections */
 }
+
+/* React root wrapper */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: #ffffff; /* so content is readable over dark body background */
+}
+
+/* Headings */
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+/* Logo */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter, transform;
+  transition: filter 300ms, transform 300ms;
+}
+
+/* Zoom animation on hover */
+@keyframes logo-zoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.logo:hover {
+  animation: logo-zoom 1s ease-in-out;
+}
+
+/* Generic card */
 .card {
   border: 1px solid #e5e5e5;
   border-radius: 12px;
   padding: 16px;
-  transition: transform .15s ease, box-shadow .15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 .card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
+
+/* CSS grid helper classes (already somewhat responsive) */
 .grid {
   display: grid;
   gap: 16px;
@@ -205,6 +94,184 @@ input[type="date"] {
 .grid-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
-@media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr; } }
 
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bolder;
+}
 
+/* Hero section */
+.hero {
+  text-align: center;
+  background-color: #e8f4ff;
+  padding: 60px 20px;
+}
+.hero-heading {
+  color: crimson;
+  font-size: 2rem;
+}
+.hero-address {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+/* Welcome section */
+.welcome {
+  background-color: #fff;
+  padding: 50px 20px;
+}
+.welcome h2 {
+  color: #007BFF;
+  font-weight: bold;
+}
+.welcome p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+/* Programs layout */
+.programs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 0;
+}
+
+/* Individual program card */
+.program-card {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  max-width: 260px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+
+.program-card img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Force native date picker appearance */
+input[type="date"] {
+  -webkit-appearance: menulist;
+  appearance: auto;
+}
+
+/* Light mode tweak when preferred */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* ---------- RESPONSIVE BREAKPOINTS ---------- */
+
+/* Medium screens (tablets, small laptops) */
+@media (max-width: 900px) {
+  #root {
+    padding: 1.5rem;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .hero {
+    padding: 40px 16px;
+  }
+
+  .programs {
+    gap: 20px;
+    padding: 30px 0;
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 600px) {
+  #root {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .hero-heading {
+    font-size: 1.6rem;
+  }
+
+  .welcome {
+    padding: 32px 16px;
+  }
+
+  .programs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .program-card {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .sideBySideCard,
+  .sideBySideFooter,
+  .sideBySideThreeCard {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  th,
+  td {
+    padding: 4px;
+    font-size: 0.8rem;
+  }
